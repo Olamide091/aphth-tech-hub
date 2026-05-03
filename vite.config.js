@@ -4,8 +4,9 @@ import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
   plugins: [vue()],
-  
-  base: '/aphth-tech-hub/', // 🔥 VERY IMPORTANT
+
+  // VERY IMPORTANT
+  base: '/',
 
   resolve: {
     alias: {
