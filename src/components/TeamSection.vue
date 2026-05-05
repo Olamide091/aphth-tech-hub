@@ -147,14 +147,15 @@ const teamMembers = [
   {
     name: "Engr. L. A Aminu",
     role: "Chief Technology Officer",
-    description: "Former Google engineer and university professor, leading our technical vision and innovation programs.",
+    description: "Quality control engineer in area of subsea engineering, pipeline engineering, 
+    destructive and non destructive engineering, Corrosion engineering. He is a certified Procurement manager.",
     skills: ["Software Engineering", "AI/ML", "Technology Strategy"],
     color: "bg-[#eef6fb] border-blue-200"
   },
   {
     name: "Mr Jire-Alao Daniel",
     role: "Head of Programs",
-    description: "Educational innovator with expertise in curriculum development and youth empowerment programs across Africa.",
+    description: "Expact in Inventor, C Programming, 3D modeling and a Automobile Engineer.",
     skills: ["Program Development", "Education", "Youth Leadership"],
     color: "bg-[#eef6fb] border-blue-200"
   },

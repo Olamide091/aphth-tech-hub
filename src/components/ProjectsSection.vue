@@ -61,7 +61,7 @@
       Have a unique engineering challenge?
     </p>
     <a href="#contact" class="btn-ghost">
-      Discuss a Custom Project
+      Discuss a Customized Project
     </a>
   </div>
 

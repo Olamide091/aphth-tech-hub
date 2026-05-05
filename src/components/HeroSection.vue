@@ -30,7 +30,7 @@
         <!-- Eyebrow -->
         <div class="label-row animate-fade-up" style="animation-delay:0.1s; opacity:0; animation-fill-mode:forwards;">
           <span class="gold-line"></span>
-          <span class="section-label">Engineering Africa’s Future</span>
+          <span class="section-label">Engineer Africa’s Future</span>
         </div>
 
         <!-- Headline (stronger) -->
