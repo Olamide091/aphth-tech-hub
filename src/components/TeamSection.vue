@@ -37,7 +37,7 @@
           </span>
 
           <h3 class="text-3xl font-bold text-brand-cream mb-1">
-            Professor Muritala
+            Professor Adam Olatunji Muritala 
           </h3>
 
           <p class="text-brand-gold text-[11px] uppercase tracking-[0.2em] mb-6">
@@ -46,9 +46,6 @@
 
           <p class="text-white/60 text-sm leading-relaxed mb-6 max-w-lg">
             Professor of Mechanical Engineering at Obafemi Awolowo University with over 27 years of experience in teaching, research, and innovation.
-          </p>
-
-          <p class="text-white/50 text-sm leading-relaxed mb-6 max-w-lg">
             Inventor of a patented fuel-less generator and currently advancing fuel-less vehicle technology.
           </p>
 
@@ -147,8 +144,7 @@ const teamMembers = [
   {
     name: "Engr. L. A Aminu",
     role: "Chief Technology Officer",
-    description: "Quality control engineer in area of subsea engineering, pipeline engineering, 
-    destructive and non destructive engineering, Corrosion engineering. He is a certified Procurement manager.",
+    description: "Quality control engineer in area of subsea engineering, pipeline engineering, destructive and non destructive engineering, Corrosion engineering. He is a certified Procurement manager.",
     skills: ["Software Engineering", "AI/ML", "Technology Strategy"],
     color: "bg-[#eef6fb] border-blue-200"
   },
