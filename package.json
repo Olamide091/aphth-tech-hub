@@ -2,17 +2,20 @@
   "name": "african-pro-humanity-tech-hub",
   "version": "1.0.0",
   "private": true,
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
+
   "dependencies": {
     "@sanity/client": "^7.22.0",
     "vue": "^3.4.0",
     "vue-router": "^4.3.0"
   },
+
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",
     "autoprefixer": "^10.4.0",
