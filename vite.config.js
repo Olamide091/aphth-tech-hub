@@ -5,8 +5,12 @@ import { fileURLToPath, URL } from 'node:url'
 export default defineConfig({
   plugins: [vue()],
 
-  // VERY IMPORTANT
-  base: '/',
+  /*
+   IMPORTANT:
+   - GitHub Pages needs the repo name
+   - Vercel ignores this and still works fine
+  */
+  base: '/aphth-tech-hub/',
 
   resolve: {
     alias: {
