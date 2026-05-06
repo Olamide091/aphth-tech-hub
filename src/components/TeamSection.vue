@@ -58,7 +58,7 @@
           </div>
 
           <!-- BUTTONS -->
-          <div class="flex gap-3">
+          <div class="flex gap-3 mb-6">
             <a
               href="https://linkedin.com/in/adam-muritala-9bb7743a"
               target="_blank"
@@ -75,6 +75,29 @@
               Contact CEO
             </a>
           </div>
+
+          <!-- MESSAGE FROM FOUNDER -->
+          <details class="bg-white/[0.03] border border-white/[0.08] rounded-lg p-4 max-w-2xl">
+            <summary class="cursor-pointer text-brand-gold text-sm font-semibold tracking-wide">
+              View Message from the Founder
+            </summary>
+
+            <p class="text-white/70 text-sm leading-relaxed mt-4">
+              At the African Pro-Humanity Technology Hub, we hold a firm conviction that Africa’s greatest wealth is not buried beneath its soil, but embedded within the untapped potential of its people. For too long, brilliance across the continent has been conditioned to pass examinations rather than to solve real-world problems that shape societies. This must change.
+            </p>
+
+            <p class="text-white/70 text-sm leading-relaxed mt-4">
+              Our mission is to awaken and equip a new generation of builders: young minds trained in practical engineering, artificial intelligence, and product development. We are training people capable of translating ideas into solutions for pressing community challenges.
+            </p>
+
+            <p class="text-white/70 text-sm leading-relaxed mt-4">
+              We are raising innovators who will not merely consume technology, but who will design, prototype, and manufacture it within Africa, for Africa, and for the world.
+            </p>
+
+            <p class="text-white/70 text-sm leading-relaxed mt-4">
+              Through hands-on learning, bold experimentation, and a deep commitment to human-centered innovation, we are laying the foundation for a future defined by self-reliance, technological sovereignty, and transformative impact where ideas do not remain abstract but become engines of progress.
+            </p>
+          </details>
 
         </div>
 
