@@ -10,7 +10,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory('/aphth-tech-hub/'), // 🔥 FIXED
+  history: createWebHistory(), 
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
