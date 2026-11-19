@@ -1,0 +1,44 @@
+{
+  "founder-presentation-oau-at-65": {
+    "duration": 371,
+    "width": 352,
+    "height": 624,
+    "sizeMB": 16
+  },
+  "four-bar-linkage": {
+    "duration": 10,
+    "width": 404,
+    "height": 720,
+    "sizeMB": 0.4
+  },
+  "gear-train-demo-1": {
+    "duration": 9,
+    "width": 1024,
+    "height": 576,
+    "sizeMB": 1.3
+  },
+  "gear-train-demo-2": {
+    "duration": 10,
+    "width": 1024,
+    "height": 576,
+    "sizeMB": 1.5
+  },
+  "oau-greenride-campus-demo": {
+    "duration": 200,
+    "width": 640,
+    "height": 362,
+    "sizeMB": 15
+  },
+  "prototypes-showcase": {
+    "duration": 36,
+    "width": 1024,
+    "height": 576,
+    "sizeMB": 3.7
+  },
+  "the-librarian-stand": {
+    "duration": 12,
+    "width": 404,
+    "height": 720,
+    "sizeMB": 0.8
+  }
+}

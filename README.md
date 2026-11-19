@@ -1,168 +1,64 @@
-# African Pro Humanity Tech Hub — Setup Guide
+# African Pro-Humanity Tech Hub — website
 
-## Project Overview
-Vue 3 + Tailwind CSS website for APHTH.
-Phase 1: Frontend UI only.
+Vue 3 + Vite + Tailwind CSS, with GSAP/ScrollTrigger and Lenis for animation.
+No CMS, no admin and no database: **all content lives in the source code** and only people
+with access to this code and the hosting account can change the website.
 
----
+## Run it
 
-## STEP-BY-STEP SETUP IN VS CODE
-
-### STEP 1 — Install Node.js (if not installed)
-1. Go to https://nodejs.org
-2. Download the **LTS** version (Long Term Support)
-3. Install it (click Next through all steps)
-4. Verify: open VS Code Terminal and type:
-   ```
-   node --version
-   npm --version
-   ```
-   You should see version numbers.
-
----
-
-### STEP 2 — Open VS Code and the Project Folder
-1. Open VS Code
-2. Go to **File → Open Folder**
-3. Navigate to where you saved this project (`african-pro-humanity-tech-hub/`)
-4. Click **Open**
-
----
-
-### STEP 3 — Open the Terminal in VS Code
-- Press **Ctrl + ` ** (backtick key, top-left of keyboard)
-- Or go to **Terminal → New Terminal**
-
----
-
-### STEP 4 — Install All Dependencies
-In the terminal, type:
 ```bash
-npm install
-```
-This reads `package.json` and installs:
-- Vue 3
-- Vue Router
-- Vite (build tool)
-- Tailwind CSS
-- PostCSS + Autoprefixer
-
-Wait until it says "added X packages".
-
----
-
-### STEP 5 — Run the Project
-```bash
-npm run dev
+npm install        # first time only
+npm run dev        # local preview at http://localhost:5173
+npm run build      # production build in dist/ (upload/deploy this)
 ```
 
-You'll see something like:
-```
-  VITE v5.x.x  ready in 300ms
-  ➜  Local:   http://localhost:5173/
-```
+## Where the content is
 
-Open your browser and go to: **http://localhost:5173**
+| What                                   | File                     |
+|----------------------------------------|--------------------------|
+| Projects                               | `src/data/projects.js`   |
+| Gallery albums                         | `src/data/gallery.js`    |
+| Founder, team members, founder message | `src/data/team.js`       |
+| Services                               | `src/data/services.js`   |
+| Hero text, stats, contact, WhatsApp    | `src/data/site.js`       |
 
-Your website is live! 🎉
+## Adding a project
 
----
-
-### STEP 6 — Edit Content
-Replace placeholder content with your real data:
-
-| File | What to change |
-|------|---------------|
-| `src/components/HeroSection.vue` | Hero image, stats, text |
-| `src/components/TeamSection.vue` | CEO name, bio, photo, team members |
-| `src/components/ProjectsSection.vue` | Project names, descriptions, images |
-| `src/components/GalleryGrid.vue` | Gallery image `src` values |
-| `src/components/ContactSection.vue` | Email, phone, address, social links |
-| `src/components/FooterSection.vue` | Footer contact info |
-
----
-
-## FILE STRUCTURE EXPLAINED
-
-```
-african-pro-humanity-tech-hub/
-├── index.html                    ← Main HTML entry point
-├── vite.config.js                ← Vite build tool config
-├── tailwind.config.js            ← Tailwind design tokens (colors, fonts)
-├── postcss.config.js             ← PostCSS config (required by Tailwind)
-├── package.json                  ← Project dependencies
-└── src/
-    ├── main.js                   ← App entry: registers Vue + Router
-    ├── App.vue                   ← Root component (NavBar + page + Footer)
-    ├── style.css                 ← Global styles + Tailwind directives
-    ├── views/
-    │   └── HomeView.vue          ← The home page (composes all sections)
-    └── components/
-        ├── NavBar.vue            ← Top navigation bar (sticky + responsive)
-        ├── HeroSection.vue       ← Full-screen hero with image + stats
-        ├── ServicesSection.vue   ← Services overview (3 cards)
-        ├── ServiceCard.vue       ← Reusable service card component
-        ├── ProjectsSection.vue   ← Projects grid with filter tabs + modal
-        ├── ProjectCard.vue       ← Reusable project card component
-        ├── GalleryGrid.vue       ← Photo gallery with lightbox
-        ├── TeamSection.vue       ← CEO highlight + team grid
-        ├── TeamCard.vue          ← Reusable team member card
-        ├── ContactSection.vue    ← Contact form + info
-        └── FooterSection.vue     ← Site footer
-```
-
----
-
-## HOW TO ADD YOUR OWN IMAGES
-
-### Method A — Put images in `/public` folder
-1. Copy your image into the `/public` folder (e.g., `/public/images/hero.jpg`)
-2. In the component, reference it as: `src="/images/hero.jpg"`
-
-### Method B — Import into `src/assets`
-1. Copy image to `src/assets/images/hero.jpg`
-2. In the component:
-   ```vue
-   <script setup>
-   import heroBg from '@/assets/images/hero.jpg'
-   </script>
-   <img :src="heroBg" />
+1. Put the photo in `media/originals/projects/` (e.g. `solar-dryer.jpg`).
+2. Run `npm run media`. This makes small, fast WebP versions in `src/assets/media/`.
+3. If there is a video, put the `.mp4` in `public/videos/` (see *Videos* below).
+4. Open `src/data/projects.js`, copy the template at the bottom, fill it in:
+   ```js
+   image: img('projects/solar-dryer', 'What the photo shows'),
+   video: video('solar-dryer.mp4'),
+   featured: true,   // also show it in the big scroll story
    ```
+Nothing else needs to change. Filters, cards, the detail view and the WhatsApp “Enquire” link all update automatically.
 
----
+## Adding gallery photos
 
-## USEFUL COMMANDS
+Create a folder such as `media/originals/gallery/my-event/` with photos named `01.jpg`, `02.jpg`, …,
+run `npm run media`, then add an album entry in `src/data/gallery.js` using `folder('gallery/my-event')`.
 
-| Command | What it does |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build locally |
+## Videos
 
----
+1. Put the raw video (any format, including iPhone `.mov`) in `media/originals/videos/`
+   with a short name, e.g. `solar-dryer-demo.mp4`.
+2. Run `npm run videos`. It converts it to a web-friendly MP4 (plays on every phone and browser),
+   makes a cover image, and records its length. Output goes to `public/videos/`.
+3. Use it in a project (`video: video('solar-dryer-demo', 'Caption')` in `src/data/projects.js`)
+   or in a gallery album's `media` list in `src/data/gallery.js`.
 
-## PHASE ROADMAP
+Short clips (≤ 40 s) loop silently as previews in the gallery on desktop; every video plays with sound
+and controls when clicked. Raw originals in `media/originals/videos/` are git-ignored (they are large);
+keep a copy of them somewhere safe.
 
-- ✅ **Phase 1** — Frontend UI (this phase)
-- 🔜 **Phase 2** — Admin Dashboard
-- 🔜 **Phase 3** — Firebase Integration (Auth, Firestore, Storage)
+## Deployment (Vercel)
 
----
+`vercel.json` configures the build (`npm run build` → `dist/`), sends unknown URLs to the site's own
+404 page, and sets caching. The image/video tools are optional dependencies, so Vercel never needs them.
 
-## COLORS REFERENCE (Tailwind classes)
+## Media originals
 
-| Class | Color |
-|-------|-------|
-| `bg-brand-gold` | #C9922A (main gold) |
-| `bg-brand-black` | #0A0A0A (deep black) |
-| `bg-brand-charcoal` | #1A1A1A (card backgrounds) |
-| `bg-brand-dark` | #111827 (section backgrounds) |
-| `bg-brand-cream` | #F5EDD6 (light text) |
-| `bg-brand-green` | #1A3A2A (image placeholders) |
-
----
-
-Need help? Contact your developer or refer to:
-- Vue docs: https://vuejs.org
-- Tailwind docs: https://tailwindcss.com
-- Vite docs: https://vitejs.dev
+`media/originals/` holds the full-size source photos (never shipped to visitors).
+`media/sanity-export-backup.json` is a backup of the content that used to live in the Sanity CMS.

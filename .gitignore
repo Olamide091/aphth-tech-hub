@@ -1,3 +1,13 @@
 node_modules
 dist
-.DS_Store
+media-inbox
+.vercel
+*.local
+.env*
+~$*
+*.docx
+# raw video originals are large; converted copies live in public/videos
+media/originals/videos/
+
+.vercel
+.env*
